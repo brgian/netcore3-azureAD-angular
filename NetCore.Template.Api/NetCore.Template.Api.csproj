@@ -12,7 +12,8 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -33,10 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetCore.Template.Configuration\NetCore.Template.Configuration.csproj" />
-    <ProjectReference Include="..\NetCore.Template.Context\NetCore.Template.Context.csproj" />
     <ProjectReference Include="..\NetCore.Template.Infrastructure\NetCore.Template.Infrastructure.csproj" />
-    <ProjectReference Include="..\NetCore.Template.Repositories\NetCore.Template.Repositories.csproj" />
-    <ProjectReference Include="..\NetCore.Template.Services\NetCore.Template.Services.csproj" />
   </ItemGroup>
 
 </Project>

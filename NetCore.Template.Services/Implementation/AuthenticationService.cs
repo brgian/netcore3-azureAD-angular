@@ -41,17 +41,17 @@ namespace NetCore.Template.Services.Implementation
             };
 
             var tokenOptions = new JwtSecurityToken(
-                issuer: configurationAccessor.SecurityConfiguration.Issuer,
-                audience: configurationAccessor.SecurityConfiguration.Audience,
+                issuer: configurationAccessor.AzureAdConfiguration.Issuer,
+                audience: configurationAccessor.AzureAdConfiguration.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(configurationAccessor.SecurityConfiguration.MinutesToExpiration),
-                signingCredentials: SecurityHelper.GetSigningCredentials(configurationAccessor.SecurityConfiguration.SigningKey)
+                expires: DateTime.Now.AddMinutes(configurationAccessor.AzureAdConfiguration.MinutesToExpiration),
+                signingCredentials: SecurityHelper.GetSigningCredentials(configurationAccessor.AzureAdConfiguration.SigningKey)
             );
 
             return new TokenResponse
             {
                 access_token = new JwtSecurityTokenHandler().WriteToken(tokenOptions),
-                expires_in = configurationAccessor.SecurityConfiguration.MinutesToExpiration.ToString()
+                expires_in = configurationAccessor.AzureAdConfiguration.MinutesToExpiration.ToString()
             };
         }
 

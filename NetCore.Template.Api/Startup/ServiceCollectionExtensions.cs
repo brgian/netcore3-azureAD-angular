@@ -1,12 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using NetCore.Template.Configuration;
-using NetCore.Template.Repositories;
-using NetCore.Template.Repositories.Implementation;
-using NetCore.Template.Services;
-using NetCore.Template.Services.Implementation;
-using Swashbuckle.AspNetCore.Swagger;
-using System.Collections.Generic;
 
 namespace NetCore.Template.Api.Configuration
 {
@@ -14,11 +8,6 @@ namespace NetCore.Template.Api.Configuration
     {
         public static IServiceCollection InjectCustomDependencies(this IServiceCollection services)
         {
-            services.AddTransient<IMyEntityRepository, MyEntityRepository>();
-            services.AddTransient<IMyEntityService, MyEntityService>();
-            services.AddTransient<IAuthenticationService, AuthenticationService>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
-
             services.AddSingleton<ConfigurationAccessor>();
 
             return services;
